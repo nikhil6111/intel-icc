@@ -103,22 +103,22 @@ Class LinkedList:
 			return
 
 		if x == self.start_node.data:
-	        new_node = Node(data)
-	        new_node.nextnode = self.start_node
-	        self.start_node = new_node
-	        return
+	        	new_node = Node(data)
+	        	new_node.nextnode = self.start_node
+	        	self.start_node = new_node
+	        	return
 
 		n = self.start_node
-        while n.nextnode is not None:
-            if n.nextnode.data == x:
-                break
-            n = n.nextnode
-        if n.nextnode is None:
-            print("data not in the found")
-        else:
-            new_node = Node(data)
-            new_node.nextnode = n.nextnode
-            n.nextnode = new_node
+        	while n.nextnode is not None:
+            		if n.nextnode.data == x:
+                		break
+            		n = n.nextnode
+		if n.nextnode is None:
+            		print("data not in the found")
+        	else:
+            		new_node = Node(data)
+            		new_node.nextnode = n.nextnode
+            		n.nextnode = new_node
 
 
 #index is given, check if it 1; then insert at the beginning
@@ -126,115 +126,115 @@ Class LinkedList:
 #check the given value is in range or not
 
 	def insert_at_index (self, index, data):
-        if index == 1:
-            new_node = Node(data)
-            new_node.nextnode = self.start_node
-            self.start_node = new_node
-        i = 1
-        n = self.start_node
-        while i < index-1 and n is not None:
-            n = n.nextnode
-            i = i+1
-        if n is None:
-            print("Index out of range")
-        else: 
-            new_node = Node(data)
-            new_node.nextnode = n.nextnode
-            n.nextnode = new_node
+        	if index == 1:
+            		new_node = Node(data)
+            		new_node.nextnode = self.start_node
+            		self.start_node = new_node
+        	i = 1
+        	n = self.start_node
+        	while i < index-1 and n is not None:
+            		n = n.nextnode
+            		i = i+1
+        	if n is None:
+            		print("Index out of range")
+        	else: 
+            		new_node = Node(data)
+            		new_node.nextnode = n.nextnode
+		    	n.nextnode = new_node
 
 
 #First Check the given list is empty
 #iterate through end and increment your counter
 	
 	def get_count(self):
-        if self.start_node is None:
-            return 0;
-        n = self.start_node
-        count = 0;
-        while n is not None:
-            count = count + 1
-            n = n.nextnode
-        return count
+        	if self.start_node is None:
+            		return 0;
+        	n = self.start_node
+        	count = 0;
+        	while n is not None:
+            		count = count + 1
+            		n = n.nextnode
+        	return count
 
 
 
 	 def search_item(self, x):
-        if self.start_node is None:
-            print("List is empty")
-            return
-        n = self.start_node
-        while n is not None:
-            if n.data == x:
-                print("Item found")
-                return True
-            n = n.nextnode
-        print("item not found")
-        return False
+        	if self.start_node is None:
+            		print("List is empty")
+            		return
+        	n = self.start_node
+        	while n is not None:
+            		if n.data == x:
+                		print("Item found")
+                		return True
+            		n = n.nextnode
+        	print("item not found")
+        	return False
 
 
 
 	def make_new_list(self):
-        nums = int(input("How many nodes do you want to create: "))
-        if nums == 0:
-            return
-        for i in range(nums):
-            value = int(input("Enter the value for the node:"))
-            self.insert_at_end(value)
+        	nums = int(input("How many nodes do you want to create: "))
+        	if nums == 0:
+            		return
+        	for i in range(nums):
+            		value = int(input("Enter the value for the node:"))
+            		self.insert_at_end(value)
 
 
 
 	def delete_at_start(self):
-        if self.start_node is None:
-            print("The list has no element to delete")
-            return 
-        self.start_node = self.start_node.nextnode
+        	if self.start_node is None:
+            		print("The list has no element to delete")
+			return 
+        	self.start_node = self.start_node.nextnode
 
 
 
 	def delete_at_end(self):
-        if self.start_node is None:
-            print("The list has no element to delete")
-            return
+        	if self.start_node is None:
+            		print("The list has no element to delete")
+            		return
 		elif self.start_node.nextnode == None:
 			self.start_node = None
 			return 
-        else:
+        	else:
 			n = self.start_node
-        	while n.nextnode.nextnode is not None:
-            	n = n.nextnode
-        	n.nextnode = None
+        		while n.nextnode.nextnode is not None:
+            			n = n.nextnode
+        		n.nextnode = None
 
 
 	
 	def delete_element_by_value(self, x):
-    	if self.start_node is None:
-        	print("The list has no element to delete")
-        	return
+    		if self.start_node is None:
+        		print("The list has no element to delete")
+        		return
 
-    	if self.start_node.item == x:
-        	self.start_node = self.start_node.nextnode
-        	return
+    		if self.start_node.item == x:
+        		self.start_node = self.start_node.nextnode
+        		return
 
-    	n = self.start_node
-    	while n.nextnode is not None:
-        	if n.nextnode.data == x:
-            		break
-        	n = n.nextnode
+    		n = self.start_node
+    		while n.nextnode is not None:
+        		if n.nextnode.data == x:
+            			break
+        		n = n.nextnode
 
-    	if n.nextnode is None:
-        	print("item not found in the list")
-    	else:
-        	n.nextnode = n.nextnode.nextnode
+    		if n.nextnode is None:
+        		print("item not found in the list")
+    		else:
+        		n.nextnode = n.nextnode.nextnode
 
 
 
 	def reverse_linkedlist(self):
-        prev = None
-        n = self.start_node
-        while n is not None:
-            next = n.nextnode
-            n.nextnode = prev
-            prev = n
-            n = next
-        self.start_node = prev
+        	prev = None
+        	n = self.start_node
+        	while n is not None:
+            		next = n.nextnode
+            		n.nextnode = prev
+            		prev = n
+            		n = next
+        	self.start_node = prev
 
