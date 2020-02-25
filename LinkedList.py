@@ -215,16 +215,16 @@ Class LinkedList:
         	self.start_node = self.start_node.nextnode
         	return
 
-    n = self.start_node
-    while n.nextnode is not None:
-        if n.nextnode.data == x:
-            break
-        n = n.nextnode
+    	n = self.start_node
+    	while n.nextnode is not None:
+        	if n.nextnode.data == x:
+            		break
+        	n = n.nextnode
 
-    if n.nextnode is None:
-        print("item not found in the list")
-    else:
-        n.nextnode = n.nextnode.nextnode
+    	if n.nextnode is None:
+        	print("item not found in the list")
+    	else:
+        	n.nextnode = n.nextnode.nextnode
 
 
 
