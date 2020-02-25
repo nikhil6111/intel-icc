@@ -207,13 +207,13 @@ Class LinkedList:
 
 	
 	def delete_element_by_value(self, x):
-    if self.start_node is None:
-        print("The list has no element to delete")
-        return
+    	if self.start_node is None:
+        	print("The list has no element to delete")
+        	return
 
-    if self.start_node.item == x:
-        self.start_node = self.start_node.nextnode
-        return
+    	if self.start_node.item == x:
+        	self.start_node = self.start_node.nextnode
+        	return
 
     n = self.start_node
     while n.nextnode is not None:
